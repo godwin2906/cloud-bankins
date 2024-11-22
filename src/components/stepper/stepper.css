@@ -1,0 +1,117 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.step-number-dots-wrapper,
+.step-number-dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.step-labels-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 10px;
+}
+.step-label-container {
+  position: relative;
+}
+.step-label-container.label_3 {
+  left: 20px;
+}
+.step-label-container.label_4 {
+  left: 4px;
+}
+.step-label-container.label_5 {
+  right: 16px;
+}
+.step-number {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #ebf0f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebf0f5;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #a0a1a3;
+}
+
+.step-number.active {
+  border-color: #0073ff;
+  color: white;
+  background-color: #0073ff;
+}
+
+.step-number.completed {
+  background-color: #0073ff;
+  color: white;
+  border-color: #0073ff;
+}
+.step-dots {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.dot.completed {
+  background-color: #0073ff;
+}
+.step-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.step-label.highlight {
+  color: #0073ff;
+}
+.step-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 520px) {
+  .stepper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .step-number-dots-wrapper {
+    padding: 0px 0px 0 32px;
+  }
+  .step-number-dots-wrapper,
+  .step-number-dots-container,
+  .step-labels-wrapper {
+    justify-content: normal;
+  }
+  .step-label {
+    font-size: 12px;
+  }
+  .step-labels-wrapper {
+    padding: 0 0px 0 15px;
+    gap: 60px;
+  }
+  .step-label-container.label_3 {
+    left: 1px;
+  }
+  .step-label-container.label_4 {
+    left: -4px;
+  }
+  .step-label-container.label_5 {
+    left: -30px;
+  }
+}

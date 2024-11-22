@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Layout from "../src/components/Layouts/Layout";
+import Stepper from "../src/components/stepper/Stepper";
+import Info from "./components/Info/Info";
+import model from "./data/model";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export default function App() {
+  const handleBack = () => {
+    if (currentStep > 1) setCurrentStep(currentStep - 1);
+  };
+
+  const handleContinue = () => {
+    if (currentStep < model.length) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      console.log("Form Submitted");
+    }
+  };
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const layoutTop = (
+    <Stepper currentStep={currentStep} setCurrentStep={setCurrentStep} />
   );
-}
 
-export default App;
+  const layoutBottom = (
+    <Info
+      currentStep={currentStep}
+      onBack={handleBack}
+      onContinue={handleContinue}
+    />
+  );
+
+  return <Layout layoutTop={layoutTop} layoutBottom={layoutBottom} />;
+}

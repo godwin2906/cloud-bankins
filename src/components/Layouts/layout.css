@@ -1,0 +1,103 @@
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.layout-container {
+  height: 100vh;
+  max-width: 100%;
+  background-color: #dde8f3;
+}
+
+.header-box {
+  display: flex;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px -5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+.header-right,
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.cb-logo {
+  background-color: #0073ff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.cb-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-logo {
+  background-color: #0073ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.user-name-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 2px;
+}
+
+.user-name {
+  margin-right: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.dropdown-arrow {
+  font-size: 16px;
+  color: #333;
+}
+
+.bottom-layout {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 520px) {
+  .header-box {
+    padding: 0px 0px;
+    height: 55px;
+  }
+  .header-left img {
+    width: 50px;
+    height: 50px;
+  }
+  .layout-container {
+    background-color: #ffffff;
+  }
+  
+}
